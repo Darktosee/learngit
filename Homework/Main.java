@@ -5,10 +5,12 @@ package com.Darktosee;
  */
  class Shape {
     private float area;
-    private float a;
-    private float b;
+    private float a;//正方形边长
+
+    private float b;/*三角形底和高*/
     private float h;
-    private float r;
+    
+    private float r;//圆半径
 
     public Shape() {
 
@@ -118,10 +120,15 @@ class Circle extends Shape {
 public class Main {
 
     public static void main(String[] args) {
+        Shape s=new Square(5);
+        Shape t=new Triangle(4,8);
+        Triangle t1=(Triangle)t;
+        final Shape  c=new  Circle(6);
 
-        System.out.println(new Square(5).getSquareArea());
-        System.out.println(new Triangle(4, 8).getTriangleArea());
-        System.out.println(new Circle(6).getCircleArea());
+
+        System.out.println("SquareArea:"+s.getSquareArea());
+        System.out.println("TriangleArea:"+t1.getTriangleArea());
+        System.out.println("CircleArea:"+c.getCircleArea());
 
 
     }
