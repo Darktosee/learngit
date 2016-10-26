@@ -1,116 +1,91 @@
 package com.Darktosee;
 
 /**
- * Created by HJUser on 2016/10/24.
+ * Created by Darktosee on 2016/10/24.
  */
- class Shape {
-    private float area;
-    private float a;//正方形边长
+/*
+抽象父类
+ */
+  abstract class Shape {
 
-    private float b;/*三角形底和高*/
-    private float h;
-    
+    public abstract float getArea() ;
+
+
+}
+class Circle extends Shape {
     private float r;//圆半径
 
-    public Shape() {
 
-    }
-
-    public void setA(float a) {
-        this.a = a;
-    }
-
-    public float getA() {
-        return a;
-    }
-
-    public float getB() {
-        return b;
-    }
-
-    public float getH() {
-        return h;
+    public Circle(float r){
+        this.setR(r);
     }
 
     public float getR() {
         return r;
     }
 
-    public void setB(int b) {
-        this.b = b;
-    }
-
-    public void setH(int h) {
-        this.h = h;
-    }
 
     public void setR(float r) {
         this.r = r;
     }
 
-    public float getSquareArea() {
-        return area = a * a;
-    }
 
-    public float getTriangleArea() {
-        return area = b * h / 2;
-    }
-
-    public float getCircleArea() {
-        return area = (int) (3.14 * r * r);
-    }
-}
-class Circle extends Shape {
-    public Circle(float r){
-        super.setR(r);
-    }
-    @Override
-    public float getR() {
-        return super.getR();
-    }
-
-    @Override
-    public float getCircleArea() {
-        return (float) (3.14*super.getR()*super.getR());
+    public float getArea() {
+        return (float) (3.14*this.getR()*this.getR());
     }
 }
 
 
 
  class Square extends Shape {
+     private float a;//正方形边长
 
-    public  Square(float a) {
-        super.setA(a);
-    }
-    @Override
-    public float getA() {
-        return super.getA();
+     public  Square(float a) {
+         this.setA(a);
+
     }
 
-    @Override
-    public float getSquareArea() {
-        return super.getA()*super.getA();
+
+     public void setA(float a) {
+         this.a = a;
+     }
+
+     public float getA() {
+         return a;
+     }
+
+
+    public float getArea() {
+        return this.getA()*this.getA();
     }
 }
 
  class Triangle extends Shape {
+     private float b;/*三角形底和高*/
+     private float h;
     public Triangle(int b,int h){
-        super.setB(b);
-        super.setH(h);
+        this.setB(b);
+        this.setH(h);
     }
-    @Override
-    public float getB() {
-        return super.getB();
-    }
+     public void setB(int b) {
+         this.b = b;
+     }
 
-    @Override
-    public float getH() {
-        return super.getH();
-    }
+     public void setH(int h) {
+         this.h = h;
+     }
 
-    @Override
-    public float getTriangleArea() {
-        return super.getB()*super.getH()/2;
+     public float getB() {
+         return b;
+     }
+
+     public float getH() {
+         return h;
+     }
+
+    public float getArea() {
+
+        return this.getB()*this.getH()/2;
     }
 }
 
@@ -120,15 +95,15 @@ class Circle extends Shape {
 public class Main {
 
     public static void main(String[] args) {
-        Shape s=new Square(5);
-        Shape t=new Triangle(4,8);
-        Triangle t1=(Triangle)t;
-        final Shape  c=new  Circle(6);
+     Shape  s=new Square(5);    //向上转型
+        Shape  t= new Triangle(5,8);
+        Triangle t1=(Triangle)t;//向下转型
+        Shape c=new Circle(6);
 
 
-        System.out.println("SquareArea:"+s.getSquareArea());
-        System.out.println("TriangleArea:"+t1.getTriangleArea());
-        System.out.println("CircleArea:"+c.getCircleArea());
+        System.out.println("SquareArea:"+s.getArea());
+        System.out.println("TriangleArea:"+t1.getArea());
+        System.out.println("CircleArea:"+c.getArea());
 
 
     }
