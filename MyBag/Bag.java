@@ -84,16 +84,18 @@ try {
 
     @Override
     public boolean isempty() {
+        boolean flag = false;
+      for(int i=0;i<elements.length-1;i++) {
+        if (elements[i] == null) {
 
-        if (elements[0]==null){
+            flag = false;
+            
+       } else {
 
-            return true;
-        }
-        else {
-
-            return  false;
-        }
-
+         flag = true;
+           }
+      }
+      return flag;
     }
 
     @Override
