@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyfirstApplacation</string>
+    <string name="phone_number">输入手机号</string>
+    <string name="pass_word">输入密码</string>
+    <string name="login">注册</string>
+    <string name="login_name">昵称</string>
+    <string name="debark">登录</string>
+
+    <string name="forget_password">忘记密码</string>
+    <string name="use_Phone_number_sign_in">立即使用手机号注册账号</string>
+</resources>
