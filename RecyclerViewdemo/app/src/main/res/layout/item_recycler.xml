@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:padding="5dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/recycler_item_student_name"
+        android:layout_height="145dp"
+        android:layout_width="match_parent"
+        android:textColor="#21ff08"
+        android:background="@mipmap/mypicture2"
+        android:textSize="30sp"/>
+
+
+    <TextView
+        android:id="@+id/recycler_item_student_grade"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="#f60707"
+        android:background="#09fbda"
+        android:textSize="20sp"
+        />
+
+
+</LinearLayout>
